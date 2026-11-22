@@ -73,6 +73,7 @@ asl run examples/stirring.asl
 - [アーキテクチャ](ARCHITECTURE.md)
 - [セキュリティ](SECURITY.md)
 - [ロードマップ](ROADMAP.md)
+- [変更履歴](CHANGELOG.md)
 
 ## 📄 ライセンス
 

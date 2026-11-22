@@ -45,3 +45,4 @@ Thumbs.db
 # ASL runtime outputs and temporary files
 *.asl.out
 .tmp/
+*.log
