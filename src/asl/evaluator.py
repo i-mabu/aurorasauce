@@ -1,3 +1,7 @@
+# ==========================================
+# ⚙️ 評価器
+# ==========================================
+
 from .ast import (
     AddStatement,
     AssignStatement,
@@ -80,7 +84,7 @@ class Evaluator:
                 f"line {line}: repeat の回数は数値で書いてください"
             )
         if isinstance(count, float) and not count.is_integer():
-            # is_integer() は inf / nan でも例外にならず False を返す。
+            # ⚠️ is_integer() は inf / nan でも例外にならず False を返す。
             # int(count) への変換は inf で OverflowError、nan で
             # ValueError になり、CLI のエラー境界をすり抜けていた。
             raise RuntimeError(
@@ -131,7 +135,7 @@ class Evaluator:
             return self._number_op(left, right, operator, line)
 
         if operator in ("==", "!="):
-            # Python では bool が int のサブクラスのため、素の == では
+            # 🔀 Python では bool が int のサブクラスのため、素の == では
             # 1 == true が真になってしまう。真偽値とそれ以外は別型として
             # 「等しくない」と扱う（他の演算での bool 排除と揃える）。
             if isinstance(left, bool) != isinstance(right, bool):
@@ -179,7 +183,7 @@ class Evaluator:
                     )
                 return left / right
         except OverflowError:
-            # 巨大な整数と小数の混合演算や、巨大な整数同士の割り算は
+            # 🔢 巨大な整数と小数の混合演算や、巨大な整数同士の割り算は
             # float へ変換できず OverflowError になる。
             raise RuntimeError(
                 f"line {line}: 計算結果が大きすぎます"

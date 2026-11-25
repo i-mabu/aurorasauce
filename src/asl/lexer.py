@@ -1,8 +1,12 @@
+# ==========================================
+# ✂️ 字句解析
+# ==========================================
+
 from .tokens import Token, TokenType
 
 
 def _is_digit(char: str) -> bool:
-    # 数値リテラルは ASCII の数字だけにする。str.isdigit() は '²' など
+    # 🔢 数値リテラルは ASCII の数字だけにする。str.isdigit() は '²' など
     # int()/float() で変換できない文字も数字と判定してしまうため。
     return "0" <= char <= "9"
 

@@ -163,7 +163,7 @@ def test_lexer_reports_line_of_unterminated_string():
 
 
 def test_lexer_rejects_non_ascii_digit():
-    # '²' は str.isdigit() が真になるが int() で変換できない。
+    # 📌 '²' は str.isdigit() が真になるが int() で変換できない。
     # 数値リテラルとして拾うと Parser で ValueError になってしまうため、
     # 字句解析の段階で「使えない文字」として弾く。
     try:

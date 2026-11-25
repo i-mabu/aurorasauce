@@ -1,3 +1,7 @@
+# ==========================================
+# 🌳 構文解析
+# ==========================================
+
 import math
 
 from .ast import (
@@ -153,7 +157,7 @@ class Parser:
     def _parse_factor(self) -> object:
         if self._check(TokenType.MINUS):
             operator = self._advance()
-            # 単項マイナスは 0 から引く形に直す（例：-3 は 0 - 3）。
+            # 📌 単項マイナスは 0 から引く形に直す（例：-3 は 0 - 3）。
             operand = self._parse_factor()
             return BinaryExpr(
                 NumberLiteral(0), "-", operand, operator.line
@@ -168,12 +172,12 @@ class Parser:
                     else int(token.lexeme)
                 )
             except ValueError:
-                # 桁数が Python の変換上限を超えるリテラルなど。
+                # 🔢 桁数が Python の変換上限を超えるリテラルなど。
                 raise SyntaxError(
                     f"line {token.line}: 数値が大きすぎます"
                 ) from None
             if isinstance(value, float) and not math.isfinite(value):
-                # 巨大な小数リテラルが inf に化けるのを防ぐ。
+                # 🔢 巨大な小数リテラルが inf に化けるのを防ぐ。
                 raise SyntaxError(f"line {token.line}: 数値が大きすぎます")
             return NumberLiteral(value)
 

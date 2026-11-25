@@ -41,7 +41,7 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
 
-    # サブコマンドは run のみのため、ここに来た時点で実行対象は決まっている。
+    # ⌨️ サブコマンドは run のみのため、ここに来た時点で実行対象は決まっている。
     try:
         run_file(args.file)
     except FileNotFoundError:
@@ -55,7 +55,7 @@ def main(argv: list[str] | None = None) -> int:
     except SyntaxError as error:
         return _error(f"構文エラー: {error}")
     except RecursionError:
-        # RecursionError は RuntimeError のサブクラスで、そのまま出すと
+        # 🔁 RecursionError は RuntimeError のサブクラスで、そのまま出すと
         # 英語の "maximum recursion depth exceeded" になってしまう。
         return _error("入れ子が深すぎます")
     except RuntimeError as error:

@@ -90,7 +90,7 @@ def main(argv: list[str] | None = None) -> int:
     run(python, "-m", "pytest", "-q")
     run(python, "-m", "ruff", "check", ".")
     if not args.skip_audit:
-        # プロジェクトの依存関係だけを監査する（実行環境の pip 自体は対象外）。
+        # ⚙️ プロジェクトの依存関係だけを監査する（実行環境の pip 自体は対象外）。
         run_audit(python)
     run(python, "-m", "build")
     artifacts = sorted((ROOT / "dist").glob("*"))

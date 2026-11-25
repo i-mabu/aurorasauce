@@ -46,5 +46,5 @@ def test_audit_clean_result_has_no_vulnerabilities():
 
 
 def test_audit_unparseable_output_is_not_a_vulnerability():
-    # ネットワーク失敗などで JSON が返らない場合、脆弱性ありとは扱わない。
+    # ⚠️ ネットワーク失敗などで JSON が返らない場合、脆弱性ありとは扱わない。
     assert verify.audit_found_vulnerabilities(_result(1, "")) is False
