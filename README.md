@@ -4,11 +4,22 @@
 
 > Code it. Mix it. Taste it.
 
-## 🚧 状態
+| 項目 | 内容 |
+|---|---|
+| バージョン | v0.1.0.dev0 |
+| 状態 | 開発中（初期開発段階） |
+| 入手先 | GitHub（i-mabu/aurorasauce） |
+| 実装 | Python 3.11+ |
+| 更新履歴 | [CHANGELOG.md](CHANGELOG.md) |
+
+## 📖 概要
+
 
 初期開発段階です。言語仕様と実装は確定していません。
 
-## 🧪 現在の実装範囲
+
+## ✨ 機能
+
 
 - `say "...";` の字句解析・構文解析・評価
 - コメント、文字列、行番号付き構文エラー
@@ -25,7 +36,20 @@
 
 言語仕様と実装は初期段階です。仕様を変更する場合は、テストと `ARCHITECTURE.md` を同時に更新してください。
 
+
+## 📝 使い方
+
+
+```bash
+asl run examples/hello.asl
+asl run examples/ingredients.asl
+asl run examples/tasting.asl
+asl run examples/stirring.asl
+```
+
+
 ## 🚀 セットアップ
+
 
 ```bash
 python -m venv .venv
@@ -36,7 +60,9 @@ source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ```
 
-## 🧪 検証
+
+## 🧪 テスト
+
 
 一括検証（テスト・カバレッジ・Lint・依存関係監査・Build）:
 
@@ -57,16 +83,9 @@ python -m build
 テストはカバレッジ下限 90% で実行されます。監査はプロジェクトの
 依存関係だけが対象で、実行環境の pip 自体は対象外です。
 
-## ▶️ サンプル実行
 
-```bash
-asl run examples/hello.asl
-asl run examples/ingredients.asl
-asl run examples/tasting.asl
-asl run examples/stirring.asl
-```
+## 🔗 関連
 
-## 📚 文書
 
 - [開発ガイド](DEVELOPMENT.md)
 - [テスト方針](TESTING.md)
@@ -75,7 +94,9 @@ asl run examples/stirring.asl
 - [ロードマップ](ROADMAP.md)
 - [変更履歴](CHANGELOG.md)
 
+
 ## 📄 ライセンス
+
 
 Aurora Sauce Language は、
 [Apache License, Version 2.0](LICENSE) のもとでライセンスされています。
